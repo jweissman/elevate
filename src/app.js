@@ -1,25 +1,33 @@
 import _ from 'lodash';
+import { Game } from './game.js';
 import { Canvas } from './canvas.js';
+import { Html } from './html.js';
 
 export class App {
-  canvas() {
-    return new Canvas();
+  constructor() {
+    this.canvas = new Canvas();
+    this.canvasId = 'game-canvas';
+  }
+
+  bootstrap() {
+    console.log("lv8 bootstrappppp");
+    this.game = new Game({canvasId: this.canvasId});
+    this.game.kickstart();
+  }
+
+  shellAround(contents) {
+    var html = new Html();
+    return html.div({id: 'elevate-shell'}, contents);
   }
 
   render() {
-    var element = document.createElement('div');
-    element.setAttribute("id", "elevate-shell")
-    element.appendChild(this.canvas().render());
-    //element.innerHTML = _.join(['HELLO', 'WORLD'], ' ');
-    //element.innerHTML += this.canvas().render();
-    return element;
+    var canvasElement = this.canvas.render({
+      id: this.canvasId,
+      //width: 800,
+      //height: 600
+    });
+
+    var shell = this.shellAround(canvasElement);
+    return shell;
   }
 }
-
-//export function appShell() {
-//  var element = document.createElement('div');
-//  element.setAttribute("id", "elevate-shell")
-//  //element.innerHTML = _.join(['HELLO', 'WORLD'], ' ');
-//  element.innerHTML += (new Canvas()).render();
-//  return element;
-//};
