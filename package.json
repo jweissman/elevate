@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "build": "webpack",
+    "test": "karma run",
+    "serve": "http-server dist"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-webpack": "^2.0.5",
+    "webpack": "^3.8.1"
+  },
+  "name": "elevate",
+  "version": "1.0.0",
+  "description": "gamedev",
+  "main": "index.js",
+  "repository": "github.com/jweissman/elevate",
+  "author": "joseph weissman <jweissman1986@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1",
+    "mocha-webpack": "^1.0.0-rc.1"
+  }
+}
